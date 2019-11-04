@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.graph_objects.Figure.add_traces &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.graph_objects.Layout" href="plotly.graph_objects.Layout.html" />
+    <link rel="prev" title="plotly.graph_objects.Figure.update_layout" href="plotly.graph_objects.Figure.update_layout.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-graph-objects-figure-add-traces">
+<h1>plotly.graph_objects.Figure.add_traces<a class="headerlink" href="#plotly-graph-objects-figure-add-traces" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="plotly.graph_objects.Figure.add_traces">
+<code class="sig-prename descclassname">Figure.</code><code class="sig-name descname">add_traces</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">rows=None</em>, <em class="sig-param">cols=None</em>, <em class="sig-param">secondary_ys=None</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.graph_objects.Figure.add_traces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add traces to the figure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><em>BaseTraceType</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em>]</em>) – <p>A list of trace specifications to be added.
+Trace specifications may be either:</p>
+<blockquote>
+<div><ul>
+<li><p>Instances of trace classes from the plotly.graph_objs
+package (e.g plotly.graph_objs.Scatter, plotly.graph_objs.Bar)</p></li>
+<li><p>Dicts where:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The ‘type’ property specifies the trace type (e.g.
+‘scatter’, ‘bar’, ‘area’, etc.). If the dict has no ‘type’
+property then ‘scatter’ is assumed.</p></li>
+<li><p>All remaining properties are passed to the constructor
+of the specified trace type.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>rows</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>] </em><em>(</em><em>default None</em><em>)</em>) – List of subplot row indexes (starting from 1) for the traces to be
+added. Only valid if figure was created using
+<code class="docutils literal notranslate"><span class="pre">plotly.tools.make_subplots</span></code></p></li>
+<li><p><strong>cols</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>] </em><em>(</em><em>default None</em><em>)</em>) – List of subplot column indexes (starting from 1) for the traces
+to be added. Only valid if figure was created using
+<code class="docutils literal notranslate"><span class="pre">plotly.tools.make_subplots</span></code></p></li>
+<li><p><strong>secondary_ys</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><em>boolean</em><em>] </em><em>(</em><em>default None</em><em>)</em>) – List of secondary_y booleans for traces to be added. See the
+docstring for <code class="docutils literal notranslate"><span class="pre">add_trace</span></code> for more info.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The Figure that add_traces was called on</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="plotly.basedatatypes.BaseFigure.html#plotly.basedatatypes.BaseFigure" title="plotly.basedatatypes.BaseFigure">BaseFigure</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">plotly</span> <span class="k">import</span> <span class="n">subplots</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
+</pre></div>
+</div>
+<p>Add two Scatter traces to a figure
+&gt;&gt;&gt; fig = go.Figure()
+&gt;&gt;&gt; fig.add_traces([go.Scatter(x=[1,2,3], y=[2,1,2]),
+…                 go.Scatter(x=[1,2,3], y=[2,1,2])])</p>
+<p>Add two Scatter traces to vertically stacked subplots
+&gt;&gt;&gt; fig = subplots.make_subplots(rows=2)
+&gt;&gt;&gt; fig.add_traces([go.Scatter(x=[1,2,3], y=[2,1,2]),
+…                 go.Scatter(x=[1,2,3], y=[2,1,2])],
+…                 rows=[1, 2], cols=[1, 1])</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../figure.html">Figure</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="plotly.graph_objects.Figure.html">plotly.graph_objects.Figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly.graph_objects.Figure.show.html">plotly.graph_objects.Figure.show</a></li>
+<li class="toctree-l3"><a class="reference internal" href="plotly.graph_objects.Figure.update_layout.html">plotly.graph_objects.Figure.update_layout</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">plotly.graph_objects.Figure.add_traces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_objects.html#layout">Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_objects.html#simple-charts">Simple charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_objects.html#distributions">Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_objects.html#finance">Finance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_objects.html#d">3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_objects.html#maps">Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_objects.html#specialized">Specialized</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../graph_objects.html">Graph objects: figures, traces and layout</a><ul>
+  <li><a href="../figure.html">Figure</a><ul>
+      <li>Previous: <a href="plotly.graph_objects.Figure.update_layout.html" title="previous chapter">plotly.graph_objects.Figure.update_layout</a></li>
+      <li>Next: <a href="plotly.graph_objects.Layout.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Layout</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.graph_objects.Figure.add_traces.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

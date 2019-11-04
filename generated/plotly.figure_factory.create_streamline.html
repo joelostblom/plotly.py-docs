@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_streamline &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_table" href="plotly.figure_factory.create_table.html" />
+    <link rel="prev" title="plotly.figure_factory.create_scatterplotmatrix" href="plotly.figure_factory.create_scatterplotmatrix.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-figure-factory-create-streamline">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_streamline<a class="headerlink" href="#plotly-figure-factory-create-streamline" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_streamline">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_streamline</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">u</em>, <em class="sig-param">v</em>, <em class="sig-param">density=1</em>, <em class="sig-param">angle=0.3490658503988659</em>, <em class="sig-param">arrow_scale=0.09</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_streamline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns data for a streamline plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>(</em><em>list|ndarray</em><em>)</em>) – 1 dimensional, evenly spaced list or array</p></li>
+<li><p><strong>y</strong> (<em>(</em><em>list|ndarray</em><em>)</em>) – 1 dimensional, evenly spaced list or array</p></li>
+<li><p><strong>u</strong> (<em>(</em><em>ndarray</em><em>)</em>) – 2 dimensional array</p></li>
+<li><p><strong>v</strong> (<em>(</em><em>ndarray</em><em>)</em>) – 2 dimensional array</p></li>
+<li><p><strong>density</strong> (<em>(</em><em>float|int</em><em>)</em>) – controls the density of streamlines in
+plot. This is multiplied by 30 to scale similiarly to other
+available streamline functions such as matplotlib.
+Default = 1</p></li>
+<li><p><strong>in radians</strong><strong>) </strong><strong>angle</strong> (<em>(</em><em>angle</em>) – angle of arrowhead. Default = pi/9</p></li>
+<li><p><strong>in</strong><strong> [</strong><strong>0</strong><strong>,</strong><strong>1</strong><strong>]</strong><strong>) </strong><strong>arrow_scale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – value to scale length of arrowhead
+Default = .09</p></li>
+<li><p><strong>kwargs</strong> – kwargs passed through plotly.graph_objs.Scatter
+for more information on valid kwargs call
+help(plotly.graph_objs.Scatter)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Rtype (dict)</dt>
+<dd class="field-even"><p>returns a representation of streamline figure.</p>
+</dd>
+</dl>
+<p>Example 1: Plot simple streamline and increase arrow size
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_streamline</p>
+<p>import numpy as np
+import math</p>
+<p># Add data
+x = np.linspace(-3, 3, 100)
+y = np.linspace(-3, 3, 100)
+Y, X = np.meshgrid(x, y)
+u = -1 - X**2 + Y
+v = 1 + X - Y**2
+u = u.T  # Transpose
+v = v.T  # Transpose</p>
+<p># Create streamline
+fig = create_streamline(x, y, u, v, arrow_scale=.1)</p>
+<p># Plot
+py.plot(fig, filename=’streamline’)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: from nbviewer.ipython.org/github/barbagroup/AeroPython
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_streamline</p>
+<p>import numpy as np
+import math</p>
+<p># Add data
+N = 50
+x_start, x_end = -2.0, 2.0
+y_start, y_end = -1.0, 1.0
+x = np.linspace(x_start, x_end, N)
+y = np.linspace(y_start, y_end, N)
+X, Y = np.meshgrid(x, y)
+ss = 5.0
+x_s, y_s = -1.0, 0.0</p>
+<p># Compute the velocity field on the mesh grid
+u_s = ss/(2*np.pi) * (X-x_s)/((X-x_s)**2 + (Y-y_s)**2)
+v_s = ss/(2*np.pi) * (Y-y_s)/((X-x_s)**2 + (Y-y_s)**2)</p>
+<p># Create streamline
+fig = create_streamline(x, y, u_s, v_s, density=2, name=’streamline’)</p>
+<p># Add source point
+point = Scatter(x=[x_s], y=[y_s], mode=’markers’,</p>
+<blockquote>
+<div><p>marker=Marker(size=14), name=’source point’)</p>
+</div></blockquote>
+<p># Plot
+fig[‘data’].append(point)
+py.plot(fig, filename=’streamline’)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_2d_density.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_2d_density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_annotated_heatmap.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_annotated_heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_bullet.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_bullet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_candlestick.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_candlestick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_dendrogram.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_dendrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_distplot.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_distplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_facet_grid.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_facet_grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_gantt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_gantt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_ohlc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_quiver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_quiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_scatterplotmatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_scatterplotmatrix</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_streamline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_table.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_ternary_contour.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ternary_contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_trisurf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_trisurf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_violin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_violin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../figure_factory.html">Figure Factory</a><ul>
+      <li>Previous: <a href="plotly.figure_factory.create_scatterplotmatrix.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_scatterplotmatrix</a></li>
+      <li>Next: <a href="plotly.figure_factory.create_table.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_table</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.figure_factory.create_streamline.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

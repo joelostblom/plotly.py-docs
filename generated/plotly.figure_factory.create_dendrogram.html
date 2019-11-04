@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_dendrogram &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_distplot" href="plotly.figure_factory.create_distplot.html" />
+    <link rel="prev" title="plotly.figure_factory.create_candlestick" href="plotly.figure_factory.create_candlestick.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-figure-factory-create-dendrogram">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_dendrogram<a class="headerlink" href="#plotly-figure-factory-create-dendrogram" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_dendrogram">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_dendrogram</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">orientation='bottom'</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">colorscale=None</em>, <em class="sig-param">distfun=None</em>, <em class="sig-param">linkagefun=&lt;function &lt;lambda&gt;&gt;</em>, <em class="sig-param">hovertext=None</em>, <em class="sig-param">color_threshold=None</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_dendrogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>BETA function that returns a dendrogram Plotly figure object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>(</em><em>ndarray</em><em>)</em>) – Matrix of observations as array of arrays</p></li>
+<li><p><strong>orientation</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – ‘top’, ‘right’, ‘bottom’, or ‘left’</p></li>
+<li><p><strong>labels</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>)</em>) – List of axis category labels(observation labels)</p></li>
+<li><p><strong>colorscale</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>)</em>) – Optional colorscale for dendrogram tree</p></li>
+<li><p><strong>distfun</strong> (<em>(</em><em>function</em><em>)</em>) – Function to compute the pairwise distance from
+the observations</p></li>
+<li><p><strong>linkagefun</strong> (<em>(</em><em>function</em><em>)</em>) – Function to compute the linkage matrix from
+the pairwise distances</p></li>
+<li><p><strong>hovertext</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>]</em><em>)</em>) – List of hovertext for constituent traces of dendrogram
+clusters</p></li>
+<li><p><strong>color_threshold</strong> (<em>(</em><em>double</em><em>)</em>) – Value at which the separation of clusters will be made</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example 1: Simple bottom oriented dendrogram
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_dendrogram</p>
+<p>import numpy as np</p>
+<p>X = np.random.rand(10,10)
+dendro = create_dendrogram(X)
+plot_url = py.plot(dendro, filename=’simple-dendrogram’)</p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: Dendrogram to put on the left of the heatmap
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_dendrogram</p>
+<p>import numpy as np</p>
+<p>X = np.random.rand(5,5)
+names = [‘Jack’, ‘Oxana’, ‘John’, ‘Chelsea’, ‘Mark’]
+dendro = create_dendrogram(X, orientation=’right’, labels=names)
+dendro[‘layout’].update({‘width’:700, ‘height’:500})</p>
+<p>py.iplot(dendro, filename=’vertical-dendrogram’)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+<p>Example 3: Dendrogram with Pandas
+<a href="#id13"><span class="problematic" id="id14">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_dendrogram</p>
+<p>import numpy as np
+import pandas as pd</p>
+<p>Index= [‘A’,’B’,’C’,’D’,’E’,’F’,’G’,’H’,’I’,’J’]
+df = pd.DataFrame(abs(np.random.randn(10, 10)), index=Index)
+fig = create_dendrogram(df, labels=Index)
+url = py.plot(fig, filename=’pandas-dendrogram’)
+<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id17"><span class="problematic" id="id18">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_2d_density.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_2d_density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_annotated_heatmap.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_annotated_heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_bullet.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_bullet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_candlestick.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_candlestick</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_dendrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_distplot.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_distplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_facet_grid.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_facet_grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_gantt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_gantt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_ohlc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_quiver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_quiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_scatterplotmatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_scatterplotmatrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_streamline.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_streamline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_table.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_ternary_contour.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ternary_contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_trisurf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_trisurf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_violin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_violin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../figure_factory.html">Figure Factory</a><ul>
+      <li>Previous: <a href="plotly.figure_factory.create_candlestick.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_candlestick</a></li>
+      <li>Next: <a href="plotly.figure_factory.create_distplot.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_distplot</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.figure_factory.create_dendrogram.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

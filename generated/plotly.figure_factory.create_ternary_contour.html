@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_ternary_contour &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_trisurf" href="plotly.figure_factory.create_trisurf.html" />
+    <link rel="prev" title="plotly.figure_factory.create_table" href="plotly.figure_factory.create_table.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-figure-factory-create-ternary-contour">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ternary_contour<a class="headerlink" href="#plotly-figure-factory-create-ternary-contour" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_ternary_contour">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_ternary_contour</code><span class="sig-paren">(</span><em class="sig-param">coordinates, values, pole_labels=['a', 'b', 'c'], width=500, height=500, ncontours=None, showscale=False, coloring=None, colorscale='Bluered', linecolor=None, title=None, interp_mode='ilr', showmarkers=False</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_ternary_contour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ternary contour plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coordinates</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em> or </em><em>ndarray</em>) – Barycentric coordinates of shape (2, N) or (3, N) where N is the
+number of data points. The sum of the 3 coordinates is expected
+to be 1 for all data points.</p></li>
+<li><p><strong>values</strong> (<em>array-like</em>) – Data points of field to be represented as contours.</p></li>
+<li><p><strong>pole_labels</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>default</em><em> [</em><em>'a'</em><em>, </em><em>'b'</em><em>, </em><em>'c'</em><em>]</em>) – Names of the three poles of the triangle.</p></li>
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Figure width.</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Figure height.</p></li>
+<li><p><strong>ncontours</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – Number of contours to display (determined automatically if None).</p></li>
+<li><p><strong>showscale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>default False</em>) – If True, a colorbar showing the color scale is displayed.</p></li>
+<li><p><strong>coloring</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><em>'lines'</em>) – How to display contour. Filled contours if None, lines if <code class="docutils literal notranslate"><span class="pre">lines</span></code>.</p></li>
+<li><p><strong>colorscale</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> (</em><em>Plotly colormap</em><em>)</em>) – colorscale of the contours.</p></li>
+<li><p><strong>linecolor</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> or </em><em>rgb color</em>) – Color used for lines. <code class="docutils literal notranslate"><span class="pre">colorscale</span></code> has to be set to None, otherwise
+line colors are determined from <code class="docutils literal notranslate"><span class="pre">colorscale</span></code>.</p></li>
+<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – Title of ternary plot</p></li>
+<li><p><strong>interp_mode</strong> (<em>'ilr'</em><em> (</em><em>default</em><em>) or </em><em>'cartesian'</em>) – Defines how data are interpolated to compute contours. If ‘irl’,
+ILR (Isometric Log-Ratio) of compositional data is performed. If
+‘cartesian’, contours are determined in Cartesian space.</p></li>
+<li><p><strong>showmarkers</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>default False</em>) – If True, markers corresponding to input compositional points are
+superimposed on contours, using the same colorscale.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Example 1: ternary contour plot with filled contours</p>
+<p># Define coordinates
+a, b = np.mgrid[0:1:20j, 0:1:20j]
+mask = a + b &lt;= 1
+a = a[mask].ravel()
+b = b[mask].ravel()
+c = 1 - a - b
+# Values to be displayed as contours
+z = a * b * c
+fig = ff.create_ternarycontour(np.stack((a, b, c)), z)</p>
+<p>It is also possible to give only two barycentric coordinates for each
+point, since the sum of the three coordinates is one:</p>
+<p>fig = ff.create_ternarycontour(np.stack((a, b)), z)
+plotly.iplot(fig)</p>
+<p>Example 2: ternary contour plot with line contours</p>
+<p>fig = ff.create_ternarycontour(np.stack((a, b, c)), z, coloring=’lines’)</p>
+<p>Example 3: customize number of contours</p>
+<p>fig = ff.create_ternarycontour(np.stack((a, b, c)), z, ncontours=8)</p>
+<p>Example 4: superimpose contour plot and original data as markers</p>
+<dl class="simple">
+<dt>fig = ff.create_ternarycontour(np.stack((a, b, c)), z, coloring=’lines’,</dt><dd><p>showmarkers=True)</p>
+</dd>
+</dl>
+<p>Example 5: customize title and pole labels</p>
+<dl class="simple">
+<dt>fig = ff.create_ternarycontour(np.stack((a, b, c)), z,</dt><dd><p>title=’Ternary plot’,
+pole_labels=[‘clay’, ‘quartz’, ‘fledspar’])</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_2d_density.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_2d_density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_annotated_heatmap.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_annotated_heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_bullet.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_bullet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_candlestick.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_candlestick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_dendrogram.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_dendrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_distplot.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_distplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_facet_grid.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_facet_grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_gantt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_gantt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_ohlc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_quiver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_quiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_scatterplotmatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_scatterplotmatrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_streamline.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_streamline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_table.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_table</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ternary_contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_trisurf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_trisurf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_violin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_violin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../figure_factory.html">Figure Factory</a><ul>
+      <li>Previous: <a href="plotly.figure_factory.create_table.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_table</a></li>
+      <li>Next: <a href="plotly.figure_factory.create_trisurf.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_trisurf</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.figure_factory.create_ternary_contour.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

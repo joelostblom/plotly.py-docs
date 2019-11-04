@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.io.to_image &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.io.write_image" href="plotly.io.write_image.html" />
+    <link rel="prev" title="I/O" href="../io.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-io-to-image">
+<h1><a class="reference internal" href="../io.html#module-plotly.io" title="plotly.io"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code></a>.to_image<a class="headerlink" href="#plotly-io-to-image" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.io.to_image">
+<code class="sig-prename descclassname">plotly.io.</code><code class="sig-name descname">to_image</code><span class="sig-paren">(</span><em class="sig-param">fig</em>, <em class="sig-param">format=None</em>, <em class="sig-param">width=None</em>, <em class="sig-param">height=None</em>, <em class="sig-param">scale=None</em>, <em class="sig-param">validate=True</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.io.to_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a figure to a static image bytes string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fig</strong> – Figure object or dict representing a figure</p></li>
+<li><p><strong>format</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – <dl class="simple">
+<dt>The desired image format. One of</dt><dd><ul>
+<li><p>’png’</p></li>
+<li><p>’jpg’ or ‘jpeg’</p></li>
+<li><p>’webp’</p></li>
+<li><p>’svg’</p></li>
+<li><p>’pdf’</p></li>
+<li><p>’eps’ (Requires the poppler library to be installed)</p></li>
+</ul>
+</dd>
+</dl>
+<p>If not specified, will default to <code class="docutils literal notranslate"><span class="pre">plotly.io.config.default_format</span></code></p>
+</p></li>
+<li><p><strong>width</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – <p>The width of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
+property is 1.0, this will also be the width of the exported image
+in physical pixels.</p>
+<p>If not specified, will default to <code class="docutils literal notranslate"><span class="pre">plotly.io.config.default_width</span></code></p>
+</p></li>
+<li><p><strong>height</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – <p>The height of the exported image in layout pixels. If the <code class="docutils literal notranslate"><span class="pre">scale</span></code>
+property is 1.0, this will also be the height of the exported image
+in physical pixels.</p>
+<p>If not specified, will default to <code class="docutils literal notranslate"><span class="pre">plotly.io.config.default_height</span></code></p>
+</p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a>) – <p>The scale factor to use when exporting the figure. A scale factor
+larger than 1.0 will increase the image resolution with respect
+to the figure’s layout pixel dimensions. Whereas as scale factor of
+less than 1.0 will decrease the image resolution.</p>
+<p>If not specified, will default to <code class="docutils literal notranslate"><span class="pre">plotly.io.config.default_scale</span></code></p>
+</p></li>
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – True if the figure should be validated before being converted to
+an image, False otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The image data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.8)">bytes</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../io.html">I/O</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.write_image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.from_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.from_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.read_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.read_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.write_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.templates.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_templated.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_templated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_html.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.write_html.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.renderers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.show.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.show</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../io.html">I/O</a><ul>
+      <li>Previous: <a href="../io.html" title="previous chapter">I/O</a></li>
+      <li>Next: <a href="plotly.io.write_image.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_image</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.io.to_image.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

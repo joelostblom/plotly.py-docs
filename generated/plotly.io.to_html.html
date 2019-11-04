@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.io.to_html &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.io.write_html" href="plotly.io.write_html.html" />
+    <link rel="prev" title="plotly.io.to_templated" href="plotly.io.to_templated.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-io-to-html">
+<h1><a class="reference internal" href="../io.html#module-plotly.io" title="plotly.io"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code></a>.to_html<a class="headerlink" href="#plotly-io-to-html" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.io.to_html">
+<code class="sig-prename descclassname">plotly.io.</code><code class="sig-name descname">to_html</code><span class="sig-paren">(</span><em class="sig-param">fig</em>, <em class="sig-param">config=None</em>, <em class="sig-param">auto_play=True</em>, <em class="sig-param">include_plotlyjs=True</em>, <em class="sig-param">include_mathjax=False</em>, <em class="sig-param">post_script=None</em>, <em class="sig-param">full_html=True</em>, <em class="sig-param">animation_opts=None</em>, <em class="sig-param">default_width='100%'</em>, <em class="sig-param">default_height='100%'</em>, <em class="sig-param">validate=True</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.io.to_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a figure to an HTML string representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fig</strong> – Figure object or dict representing a figure</p></li>
+<li><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – Plotly.js figure config options</p></li>
+<li><p><strong>auto_play</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>default=True</em><em>)</em>) – Whether to automatically start the animation sequence on page load
+if the figure contains frames. Has no effect if the figure does not
+contain frames.</p></li>
+<li><p><strong>include_plotlyjs</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default True</em><em>)</em>) – <p>Specifies how the plotly.js library is included/loaded in the output
+div string.</p>
+<p>If True, a script tag containing the plotly.js source code (~3MB)
+is included in the output.  HTML files generated with this option are
+fully self-contained and can be used offline.</p>
+<p>If ‘cdn’, a script tag that references the plotly.js CDN is included
+in the output. HTML files generated with this option are about 3MB
+smaller than those generated with include_plotlyjs=True, but they
+require an active internet connection in order to load the plotly.js
+library.</p>
+<p>If ‘directory’, a script tag is included that references an external
+plotly.min.js bundle that is assumed to reside in the same
+directory as the HTML file.</p>
+<p>If ‘require’, Plotly.js is loaded using require.js.  This option
+assumes that require.js is globally available and that it has been
+globally configured to know how to find Plotly.js as ‘plotly’.
+This option is not advised when full_html=True as it will result
+in a non-functional html file.</p>
+<p>If a string that ends in ‘.js’, a script tag is included that
+references the specified path. This approach can be used to point
+the resulting HTML file to an alternative CDN or local bundle.</p>
+<p>If False, no script tag referencing plotly.js is included. This is
+useful when the resulting div string will be placed inside an HTML
+document that already loads plotly.js. This option is not advised
+when full_html=True as it will result in a non-functional html file.</p>
+</p></li>
+<li><p><strong>include_mathjax</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> or </em><em>string</em><em> (</em><em>default False</em><em>)</em>) – <p>Specifies how the MathJax.js library is included in the output html
+div string.  MathJax is required in order to display labels
+with LaTeX typesetting.</p>
+<p>If False, no script tag referencing MathJax.js will be included in the
+output.</p>
+<p>If ‘cdn’, a script tag that references a MathJax CDN location will be
+included in the output.  HTML div strings generated with this option
+will be able to display LaTeX typesetting as long as internet access
+is available.</p>
+<p>If a string that ends in ‘.js’, a script tag is included that
+references the specified path. This approach can be used to point the
+resulting HTML div string to an alternative CDN.</p>
+</p></li>
+<li><p><strong>post_script</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – JavaScript snippet(s) to be included in the resulting div just after
+plot creation.  The string(s) may include ‘{plot_id}’ placeholders
+that will then be replaced by the <code class="docutils literal notranslate"><span class="pre">id</span></code> of the div element that the
+plotly.js figure is associated with.  One application for this script
+is to install custom plotly.js event handlers.</p></li>
+<li><p><strong>full_html</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – If True, produce a string containing a complete HTML document
+starting with an &lt;html&gt; tag.  If False, produce a string containing
+a single &lt;div&gt; element.</p></li>
+<li><p><strong>animation_opts</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><em>dict</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em> (</em><em>default None</em><em>)</em>) – dict of custom animation parameters to be passed to the function
+Plotly.animate in Plotly.js. See
+<a class="reference external" href="https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js">https://github.com/plotly/plotly.js/blob/master/src/plots/animation_attributes.js</a>
+for available options. Has no effect if the figure does not contain
+frames, or auto_play is False.</p></li>
+<li><p><strong>default_height</strong> (<em>default_width</em><em>,</em>) – The default figure width/height to use if the provided figure does not
+specify its own layout.width/layout.height property.  May be
+specified in pixels as an integer (e.g. 500), or as a css width style
+string (e.g. ‘500px’, ‘100%’).</p></li>
+<li><p><strong>validate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if the figure should be validated before being converted to
+JSON, False otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Representation of figure as an HTML div string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../io.html">I/O</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.write_image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.from_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.from_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.read_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.read_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.write_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.templates.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_templated.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_templated</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.write_html.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.renderers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.show.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.show</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../io.html">I/O</a><ul>
+      <li>Previous: <a href="plotly.io.to_templated.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_templated</a></li>
+      <li>Next: <a href="plotly.io.write_html.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_html</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.io.to_html.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

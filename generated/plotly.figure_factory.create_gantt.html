@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.figure_factory.create_gantt &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.figure_factory.create_ohlc" href="plotly.figure_factory.create_ohlc.html" />
+    <link rel="prev" title="plotly.figure_factory.create_facet_grid" href="plotly.figure_factory.create_facet_grid.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-figure-factory-create-gantt">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_gantt<a class="headerlink" href="#plotly-figure-factory-create-gantt" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.figure_factory.create_gantt">
+<code class="sig-prename descclassname">plotly.figure_factory.</code><code class="sig-name descname">create_gantt</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">colors=None</em>, <em class="sig-param">index_col=None</em>, <em class="sig-param">show_colorbar=False</em>, <em class="sig-param">reverse_colors=False</em>, <em class="sig-param">title='Gantt Chart'</em>, <em class="sig-param">bar_width=0.2</em>, <em class="sig-param">showgrid_x=False</em>, <em class="sig-param">showgrid_y=False</em>, <em class="sig-param">height=600</em>, <em class="sig-param">width=None</em>, <em class="sig-param">tasks=None</em>, <em class="sig-param">task_names=None</em>, <em class="sig-param">data=None</em>, <em class="sig-param">group_tasks=False</em>, <em class="sig-param">show_hover_fill=True</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.figure_factory.create_gantt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns figure for a gantt chart
+:param (array|list) df: input data for gantt chart. Must be either a</p>
+<blockquote>
+<div><p>a dataframe or a list. If dataframe, the columns must include
+‘Task’, ‘Start’ and ‘Finish’. Other columns can be included and
+used for indexing. If a list, its elements must be dictionaries
+with the same required column headers: ‘Task’, ‘Start’ and
+‘Finish’.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>colors</strong> (<em>(</em><em>str|list|dict|tuple</em><em>)</em>) – either a plotly scale name, an
+rgb or hex color, a color tuple or a list of colors. An rgb color
+is of the form ‘rgb(x, y, z)’ where x, y, z belong to the interval
+[0, 255] and a color tuple is a tuple of the form (a, b, c) where
+a, b and c belong to [0, 1]. If colors is a list, it must
+contain the valid color types aforementioned as its members.
+If a dictionary, all values of the indexing column must be keys in
+colors.</p></li>
+<li><p><strong>index_col</strong> (<em>(</em><em>str|float</em><em>)</em>) – the column header (if df is a data
+frame) that will function as the indexing column. If df is a list,
+index_col must be one of the keys in all the items of df.</p></li>
+<li><p><strong>show_colorbar</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – determines if colorbar will be visible.
+Only applies if values in the index column are numeric.</p></li>
+<li><p><strong>show_hover_fill</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – enables/disables the hovertext for the
+filled area of the chart.</p></li>
+<li><p><strong>reverse_colors</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – reverses the order of selected colors</p></li>
+<li><p><strong>title</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>)</em>) – the title of the chart</p></li>
+<li><p><strong>bar_width</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – the width of the horizontal bars in the plot</p></li>
+<li><p><strong>showgrid_x</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – show/hide the x-axis grid</p></li>
+<li><p><strong>showgrid_y</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>)</em>) – show/hide the y-axis grid</p></li>
+<li><p><strong>height</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – the height of the chart</p></li>
+<li><p><strong>width</strong> (<em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>)</em>) – the width of the chart</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example 1: Simple Gantt Chart
+<a href="#id1"><span class="problematic" id="id2">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_gantt</p>
+<p># Make data for chart
+df = [dict(Task=”Job A”, Start=’2009-01-01’, Finish=’2009-02-30’),</p>
+<blockquote>
+<div><p>dict(Task=”Job B”, Start=’2009-03-05’, Finish=’2009-04-15’),
+dict(Task=”Job C”, Start=’2009-02-20’, Finish=’2009-05-30’)]</p>
+</div></blockquote>
+<p># Create a figure
+fig = create_gantt(df)</p>
+<p># Plot the data
+py.iplot(fig, filename=’Simple Gantt Chart’, world_readable=True)
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Example 2: Index by Column with Numerical Entries
+<a href="#id7"><span class="problematic" id="id8">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_gantt</p>
+<p># Make data for chart
+df = [dict(Task=”Job A”, Start=’2009-01-01’,</p>
+<blockquote>
+<div><blockquote>
+<div><p>Finish=’2009-02-30’, Complete=10),</p>
+</div></blockquote>
+<dl class="simple">
+<dt>dict(Task=”Job B”, Start=’2009-03-05’,</dt><dd><p>Finish=’2009-04-15’, Complete=60),</p>
+</dd>
+<dt>dict(Task=”Job C”, Start=’2009-02-20’,</dt><dd><p>Finish=’2009-05-30’, Complete=95)]</p>
+</dd>
+</dl>
+</div></blockquote>
+<p># Create a figure with Plotly colorscale
+fig = create_gantt(df, colors=’Blues’, index_col=’Complete’,</p>
+<blockquote>
+<div><p>show_colorbar=True, bar_width=0.5,
+showgrid_x=True, showgrid_y=True)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig, filename=’Numerical Entries’, world_readable=True)
+<a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a></p>
+<p>Example 3: Index by Column with String Entries
+<a href="#id13"><span class="problematic" id="id14">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_gantt</p>
+<p># Make data for chart
+df = [dict(Task=”Job A”, Start=’2009-01-01’,</p>
+<blockquote>
+<div><blockquote>
+<div><p>Finish=’2009-02-30’, Resource=’Apple’),</p>
+</div></blockquote>
+<dl class="simple">
+<dt>dict(Task=”Job B”, Start=’2009-03-05’,</dt><dd><p>Finish=’2009-04-15’, Resource=’Grape’),</p>
+</dd>
+<dt>dict(Task=”Job C”, Start=’2009-02-20’,</dt><dd><p>Finish=’2009-05-30’, Resource=’Banana’)]</p>
+</dd>
+</dl>
+</div></blockquote>
+<p># Create a figure with Plotly colorscale
+fig = create_gantt(df, colors=[‘rgb(200, 50, 25)’, (1, 0, 1), ‘#6c4774’],</p>
+<blockquote>
+<div><p>index_col=’Resource’, reverse_colors=True,
+show_colorbar=True)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig, filename=’String Entries’, world_readable=True)
+<a href="#id15"><span class="problematic" id="id16">``</span></a><a href="#id17"><span class="problematic" id="id18">`</span></a></p>
+<p>Example 4: Use a dictionary for colors
+<a href="#id19"><span class="problematic" id="id20">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_gantt</p>
+<p># Make data for chart
+df = [dict(Task=”Job A”, Start=’2009-01-01’,</p>
+<blockquote>
+<div><blockquote>
+<div><p>Finish=’2009-02-30’, Resource=’Apple’),</p>
+</div></blockquote>
+<dl class="simple">
+<dt>dict(Task=”Job B”, Start=’2009-03-05’,</dt><dd><p>Finish=’2009-04-15’, Resource=’Grape’),</p>
+</dd>
+<dt>dict(Task=”Job C”, Start=’2009-02-20’,</dt><dd><p>Finish=’2009-05-30’, Resource=’Banana’)]</p>
+</dd>
+</dl>
+</div></blockquote>
+<p># Make a dictionary of colors
+colors = {‘Apple’: ‘rgb(255, 0, 0)’,</p>
+<blockquote>
+<div><p>‘Grape’: ‘rgb(170, 14, 200)’,
+‘Banana’: (1, 1, 0.2)}</p>
+</div></blockquote>
+<p># Create a figure with Plotly colorscale
+fig = create_gantt(df, colors=colors, index_col=’Resource’,</p>
+<blockquote>
+<div><p>show_colorbar=True)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig, filename=’dictioanry colors’, world_readable=True)
+<a href="#id21"><span class="problematic" id="id22">``</span></a><a href="#id23"><span class="problematic" id="id24">`</span></a></p>
+<p>Example 5: Use a pandas dataframe
+<a href="#id25"><span class="problematic" id="id26">``</span></a>`
+import plotly.plotly as py
+from plotly.figure_factory import create_gantt</p>
+<p>import pandas as pd</p>
+<p># Make data as a dataframe
+df = pd.DataFrame([[‘Run’, ‘2010-01-01’, ‘2011-02-02’, 10],</p>
+<blockquote>
+<div><blockquote>
+<div><p>[‘Fast’, ‘2011-01-01’, ‘2012-06-05’, 55],
+[‘Eat’, ‘2012-01-05’, ‘2013-07-05’, 94]],</p>
+</div></blockquote>
+<p>columns=[‘Task’, ‘Start’, ‘Finish’, ‘Complete’])</p>
+</div></blockquote>
+<p># Create a figure with Plotly colorscale
+fig = create_gantt(df, colors=’Blues’, index_col=’Complete’,</p>
+<blockquote>
+<div><p>show_colorbar=True, bar_width=0.5,
+showgrid_x=True, showgrid_y=True)</p>
+</div></blockquote>
+<p># Plot the data
+py.iplot(fig, filename=’data with dataframe’, world_readable=True)
+<a href="#id27"><span class="problematic" id="id28">``</span></a><a href="#id29"><span class="problematic" id="id30">`</span></a></p>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../figure_factory.html">Figure Factory</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_2d_density.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_2d_density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_annotated_heatmap.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_annotated_heatmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_bullet.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_bullet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_candlestick.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_candlestick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_dendrogram.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_dendrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_distplot.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_distplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_facet_grid.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_facet_grid</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_gantt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_ohlc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ohlc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_quiver.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_quiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_scatterplotmatrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_scatterplotmatrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_streamline.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_streamline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_table.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_ternary_contour.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ternary_contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_trisurf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_trisurf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.figure_factory.create_violin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_violin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../figure_factory.html">Figure Factory</a><ul>
+      <li>Previous: <a href="plotly.figure_factory.create_facet_grid.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_facet_grid</a></li>
+      <li>Next: <a href="plotly.figure_factory.create_ohlc.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.figure_factory</span></code>.create_ohlc</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.figure_factory.create_gantt.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

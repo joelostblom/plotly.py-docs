@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Graph objects: figures, traces and layout &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Figure" href="figure.html" />
+    <link rel="prev" title="plotly.express.density_heatmap" href="generated/plotly.express.density_heatmap.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="graph-objects-figures-traces-and-layout">
+<span id="graph-objects"></span><h1>Graph objects: figures, traces and layout<a class="headerlink" href="#graph-objects-figures-traces-and-layout" title="Permalink to this headline">¶</a></h1>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code> contains the building blocks of plotly <a class="reference internal" href="generated/plotly.graph_objects.Figure.html#plotly.graph_objects.Figure" title="plotly.graph_objects.Figure"><code class="xref py py-class docutils literal notranslate"><span class="pre">Figure</span></code></a>: traces
+(<a class="reference internal" href="generated/plotly.graph_objects.Scatter.html#plotly.graph_objects.Scatter" title="plotly.graph_objects.Scatter"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scatter</span></code></a>, <a class="reference internal" href="generated/plotly.graph_objects.Bar.html#plotly.graph_objects.Bar" title="plotly.graph_objects.Bar"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bar</span></code></a>, …) and <a class="reference internal" href="generated/plotly.graph_objects.Layout.html#plotly.graph_objects.Layout" title="plotly.graph_objects.Layout"><code class="xref py py-class docutils literal notranslate"><span class="pre">Layout</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Figure:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="figure.html">Figure</a></li>
+</ul>
+</div>
+<div class="section" id="layout">
+<h2>Layout<a class="headerlink" href="#layout" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Layout.html#plotly.graph_objects.Layout" title="plotly.graph_objects.Layout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layout</span></code></a>([arg, angularaxis, annotations, …])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="simple-charts">
+<h2>Simple charts<a class="headerlink" href="#simple-charts" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scatter.html#plotly.graph_objects.Scatter" title="plotly.graph_objects.Scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scatter</span></code></a>([arg, cliponaxis, connectgaps, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scattergl.html#plotly.graph_objects.Scattergl" title="plotly.graph_objects.Scattergl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scattergl</span></code></a>([arg, connectgaps, customdata, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Bar.html#plotly.graph_objects.Bar" title="plotly.graph_objects.Bar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bar</span></code></a>([arg, alignmentgroup, base, basesrc, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Pie.html#plotly.graph_objects.Pie" title="plotly.graph_objects.Pie"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Pie</span></code></a>([arg, customdata, customdatasrc, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Heatmap.html#plotly.graph_objects.Heatmap" title="plotly.graph_objects.Heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Heatmap</span></code></a>([arg, autocolorscale, coloraxis, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Contour.html#plotly.graph_objects.Contour" title="plotly.graph_objects.Contour"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Contour</span></code></a>([arg, autocolorscale, autocontour, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Table.html#plotly.graph_objects.Table" title="plotly.graph_objects.Table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a>([arg, cells, columnorder, …])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="distributions">
+<h2>Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Box.html#plotly.graph_objects.Box" title="plotly.graph_objects.Box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Box</span></code></a>([arg, alignmentgroup, boxmean, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Violin.html#plotly.graph_objects.Violin" title="plotly.graph_objects.Violin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Violin</span></code></a>([arg, alignmentgroup, bandwidth, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Histogram.html#plotly.graph_objects.Histogram" title="plotly.graph_objects.Histogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Histogram</span></code></a>([arg, alignmentgroup, autobinx, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Histogram2d.html#plotly.graph_objects.Histogram2d" title="plotly.graph_objects.Histogram2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Histogram2d</span></code></a>([arg, autobinx, autobiny, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Histogram2dcontour.html#plotly.graph_objects.Histogram2dcontour" title="plotly.graph_objects.Histogram2dcontour"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Histogram2dcontour</span></code></a>(*args, **kwargs)</p></td>
+<td><p>plotly.graph_objs.Histogram2dcontour is deprecated.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="finance">
+<h2>Finance<a class="headerlink" href="#finance" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Ohlc.html#plotly.graph_objects.Ohlc" title="plotly.graph_objects.Ohlc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ohlc</span></code></a>([arg, close, closesrc, customdata, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Candlestick.html#plotly.graph_objects.Candlestick" title="plotly.graph_objects.Candlestick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Candlestick</span></code></a>([arg, close, closesrc, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Waterfall.html#plotly.graph_objects.Waterfall" title="plotly.graph_objects.Waterfall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Waterfall</span></code></a>([arg, alignmentgroup, base, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Funnel.html#plotly.graph_objects.Funnel" title="plotly.graph_objects.Funnel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Funnel</span></code></a>([arg, alignmentgroup, cliponaxis, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Funnelarea.html#plotly.graph_objects.Funnelarea" title="plotly.graph_objects.Funnelarea"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Funnelarea</span></code></a>([arg, aspectratio, baseratio, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Indicator.html#plotly.graph_objects.Indicator" title="plotly.graph_objects.Indicator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Indicator</span></code></a>([arg, align, customdata, …])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="d">
+<h2>3D<a class="headerlink" href="#d" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scatter3d.html#plotly.graph_objects.Scatter3d" title="plotly.graph_objects.Scatter3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scatter3d</span></code></a>([arg, connectgaps, customdata, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Surface.html#plotly.graph_objects.Surface" title="plotly.graph_objects.Surface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Surface</span></code></a>([arg, autocolorscale, cauto, cmax, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Mesh3d.html#plotly.graph_objects.Mesh3d" title="plotly.graph_objects.Mesh3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Mesh3d</span></code></a>([arg, alphahull, autocolorscale, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Cone.html#plotly.graph_objects.Cone" title="plotly.graph_objects.Cone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cone</span></code></a>([arg, anchor, autocolorscale, cauto, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Streamtube.html#plotly.graph_objects.Streamtube" title="plotly.graph_objects.Streamtube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Streamtube</span></code></a>([arg, autocolorscale, cauto, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Volume.html#plotly.graph_objects.Volume" title="plotly.graph_objects.Volume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Volume</span></code></a>([arg, autocolorscale, caps, cauto, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Isosurface.html#plotly.graph_objects.Isosurface" title="plotly.graph_objects.Isosurface"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Isosurface</span></code></a>([arg, autocolorscale, caps, …])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="maps">
+<h2>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scattergeo.html#plotly.graph_objects.Scattergeo" title="plotly.graph_objects.Scattergeo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scattergeo</span></code></a>([arg, connectgaps, customdata, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Choropleth.html#plotly.graph_objects.Choropleth" title="plotly.graph_objects.Choropleth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Choropleth</span></code></a>([arg, autocolorscale, coloraxis, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scattermapbox.html#plotly.graph_objects.Scattermapbox" title="plotly.graph_objects.Scattermapbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scattermapbox</span></code></a>([arg, below, connectgaps, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Choroplethmapbox.html#plotly.graph_objects.Choroplethmapbox" title="plotly.graph_objects.Choroplethmapbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Choroplethmapbox</span></code></a>([arg, autocolorscale, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Densitymapbox.html#plotly.graph_objects.Densitymapbox" title="plotly.graph_objects.Densitymapbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Densitymapbox</span></code></a>([arg, autocolorscale, below, …])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="specialized">
+<h2>Specialized<a class="headerlink" href="#specialized" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scatterpolar.html#plotly.graph_objects.Scatterpolar" title="plotly.graph_objects.Scatterpolar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scatterpolar</span></code></a>([arg, cliponaxis, connectgaps, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scatterpolargl.html#plotly.graph_objects.Scatterpolargl" title="plotly.graph_objects.Scatterpolargl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scatterpolargl</span></code></a>([arg, connectgaps, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Barpolar.html#plotly.graph_objects.Barpolar" title="plotly.graph_objects.Barpolar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Barpolar</span></code></a>([arg, base, basesrc, customdata, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scatterternary.html#plotly.graph_objects.Scatterternary" title="plotly.graph_objects.Scatterternary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scatterternary</span></code></a>([arg, a, asrc, b, bsrc, c, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Sunburst.html#plotly.graph_objects.Sunburst" title="plotly.graph_objects.Sunburst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sunburst</span></code></a>([arg, branchvalues, count, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Treemap.html#plotly.graph_objects.Treemap" title="plotly.graph_objects.Treemap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Treemap</span></code></a>([arg, branchvalues, count, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Sankey.html#plotly.graph_objects.Sankey" title="plotly.graph_objects.Sankey"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sankey</span></code></a>([arg, arrangement, customdata, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Splom.html#plotly.graph_objects.Splom" title="plotly.graph_objects.Splom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Splom</span></code></a>([arg, customdata, customdatasrc, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Parcats.html#plotly.graph_objects.Parcats" title="plotly.graph_objects.Parcats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parcats</span></code></a>([arg, arrangement, bundlecolors, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Parcoords.html#plotly.graph_objects.Parcoords" title="plotly.graph_objects.Parcoords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parcoords</span></code></a>([arg, customdata, customdatasrc, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Carpet.html#plotly.graph_objects.Carpet" title="plotly.graph_objects.Carpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Carpet</span></code></a>([arg, a, a0, aaxis, asrc, b, b0, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Scattercarpet.html#plotly.graph_objects.Scattercarpet" title="plotly.graph_objects.Scattercarpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scattercarpet</span></code></a>([arg, a, asrc, b, bsrc, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/plotly.graph_objects.Contourcarpet.html#plotly.graph_objects.Contourcarpet" title="plotly.graph_objects.Contourcarpet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Contourcarpet</span></code></a>([arg, a, a0, asrc, atype, …])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Graph objects: figures, traces and layout</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="figure.html">Figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#layout">Layout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Layout.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Layout.html#id3"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.layout</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simple-charts">Simple charts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatter.html#id7"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scatter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scattergl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scattergl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scattergl.html#id3"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scattergl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Bar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Bar.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Pie.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Pie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Pie.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.pie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Heatmap.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Heatmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Heatmap.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.heatmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Contour.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Contour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Contour.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.contour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Table.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Table.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.table</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#distributions">Distributions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Box.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Box.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Violin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Violin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Violin.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.violin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Histogram.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Histogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Histogram.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.histogram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Histogram2d.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Histogram2d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Histogram2d.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.histogram2d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Histogram2dcontour.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Histogram2dcontour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Histogram2dcontour.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.histogram2dcontour</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#finance">Finance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Ohlc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Ohlc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Ohlc.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.ohlc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Candlestick.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Candlestick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Candlestick.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.candlestick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Waterfall.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Waterfall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Waterfall.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.waterfall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Funnel.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Funnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Funnel.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.funnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Funnelarea.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Funnelarea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Funnelarea.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.funnelarea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Indicator.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Indicator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Indicator.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.indicator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#d">3D</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatter3d.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scatter3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatter3d.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scatter3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Surface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Surface.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Mesh3d.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Mesh3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Mesh3d.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.mesh3d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Cone.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Cone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Cone.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.cone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Streamtube.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Streamtube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Streamtube.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.streamtube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Volume.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Volume.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Isosurface.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Isosurface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Isosurface.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.isosurface</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#maps">Maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scattergeo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scattergeo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scattergeo.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scattergeo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Choropleth.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Choropleth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Choropleth.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.choropleth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scattermapbox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scattermapbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scattermapbox.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scattermapbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Choroplethmapbox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Choroplethmapbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Choroplethmapbox.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.choroplethmapbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Densitymapbox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Densitymapbox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Densitymapbox.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.densitymapbox</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#specialized">Specialized</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatterpolar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scatterpolar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatterpolar.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scatterpolar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatterpolargl.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scatterpolargl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatterpolargl.html#id3"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scatterpolargl</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Barpolar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Barpolar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Barpolar.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.barpolar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatterternary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scatterternary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scatterternary.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scatterternary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Sunburst.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Sunburst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Sunburst.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.sunburst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Treemap.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Treemap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Treemap.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.treemap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Sankey.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Sankey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Sankey.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.sankey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Splom.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Splom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Splom.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.splom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Parcats.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Parcats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Parcats.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.parcats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Parcoords.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Parcoords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Parcoords.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.parcoords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Carpet.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Carpet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Carpet.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.carpet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scattercarpet.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Scattercarpet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Scattercarpet.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.scattercarpet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Contourcarpet.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.Contourcarpet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/plotly.graph_objects.Contourcarpet.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code>.contourcarpet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">I/O</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="generated/plotly.express.density_heatmap.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.density_heatmap</a></li>
+      <li>Next: <a href="figure.html" title="next chapter">Figure</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/graph_objects.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

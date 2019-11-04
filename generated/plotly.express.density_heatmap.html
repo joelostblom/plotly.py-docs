@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.express.density_heatmap &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Graph objects: figures, traces and layout" href="../graph_objects.html" />
+    <link rel="prev" title="plotly.express.density_contour" href="plotly.express.density_contour.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-express-density-heatmap">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.density_heatmap<a class="headerlink" href="#plotly-express-density-heatmap" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.express.density_heatmap">
+<code class="sig-prename descclassname">plotly.express.</code><code class="sig-name descname">density_heatmap</code><span class="sig-paren">(</span><em class="sig-param">data_frame=None</em>, <em class="sig-param">x=None</em>, <em class="sig-param">y=None</em>, <em class="sig-param">z=None</em>, <em class="sig-param">facet_row=None</em>, <em class="sig-param">facet_col=None</em>, <em class="sig-param">hover_name=None</em>, <em class="sig-param">hover_data=None</em>, <em class="sig-param">animation_frame=None</em>, <em class="sig-param">animation_group=None</em>, <em class="sig-param">category_orders={}</em>, <em class="sig-param">labels={}</em>, <em class="sig-param">color_continuous_scale=None</em>, <em class="sig-param">range_color=None</em>, <em class="sig-param">color_continuous_midpoint=None</em>, <em class="sig-param">marginal_x=None</em>, <em class="sig-param">marginal_y=None</em>, <em class="sig-param">opacity=None</em>, <em class="sig-param">log_x=False</em>, <em class="sig-param">log_y=False</em>, <em class="sig-param">range_x=None</em>, <em class="sig-param">range_y=None</em>, <em class="sig-param">histfunc=None</em>, <em class="sig-param">histnorm=None</em>, <em class="sig-param">nbinsx=None</em>, <em class="sig-param">nbinsy=None</em>, <em class="sig-param">title=None</em>, <em class="sig-param">template=None</em>, <em class="sig-param">width=None</em>, <em class="sig-param">height=None</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.express.density_heatmap" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>In a density heatmap, rows of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> are grouped together into colored     rectangular tiles to visualize the 2D distribution of an aggregate function     <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> (e.g. the count or sum) of the value <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_frame</strong> – A <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>, or a <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> array or a dictionary which are tranformed internally to <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. This argument needsto be passed for column names (and not keyword names) to be used.</p></li>
+<li><p><strong>x</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to position marks along the x axis in cartesian coordinates. For horizontal <code class="docutils literal notranslate"><span class="pre">histogram`s,</span> <span class="pre">these</span> <span class="pre">values</span> <span class="pre">are</span> <span class="pre">used</span> <span class="pre">as</span> <span class="pre">inputs</span> <span class="pre">to</span> <span class="pre">`histfunc</span></code>.</p></li>
+<li><p><strong>y</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to position marks along the y axis in cartesian coordinates. For vertical <code class="docutils literal notranslate"><span class="pre">histogram`s,</span> <span class="pre">these</span> <span class="pre">values</span> <span class="pre">are</span> <span class="pre">used</span> <span class="pre">as</span> <span class="pre">inputs</span> <span class="pre">to</span> <span class="pre">`histfunc</span></code>.</p></li>
+<li><p><strong>z</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to position marks along the z axis in cartesian coordinates. For <code class="docutils literal notranslate"><span class="pre">density_heatmap</span></code> and <code class="docutils literal notranslate"><span class="pre">density_contour</span></code> these values are used as the inputs to <code class="docutils literal notranslate"><span class="pre">histfunc</span></code>.</p></li>
+<li><p><strong>facet_row</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to facetted subplots in the vertical direction.</p></li>
+<li><p><strong>facet_col</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to facetted subplots in the horizontal direction.</p></li>
+<li><p><strong>hover_name</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like appear in bold in the hover tooltip.</p></li>
+<li><p><strong>hover_data</strong> – (list of string or int: names of columns in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like objects) Values from these columns appear as extra data in the hover tooltip.</p></li>
+<li><p><strong>animation_frame</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to animation frames.</p></li>
+<li><p><strong>animation_group</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to provide object-constancy across animation frames: rows with matching <a href="#id1"><span class="problematic" id="id2">`</span></a>animation_group`s will be treated as if they describe the same object in each frame.</p></li>
+<li><p><strong>category_orders</strong> – (dict with string keys and list-of-string values, default <code class="docutils literal notranslate"><span class="pre">{}</span></code>) By default, in Python 3.6+, the order of categorical values in axes, legends and facets depends on the order in which these values are first encountered in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> (and no order is guaranteed by default in Python below 3.6). This parameter is used to force a specific ordering of values per column. The keys of this dict should correspond to column names, and the values should be lists of strings corresponding to the specific display order desired.</p></li>
+<li><p><strong>labels</strong> – (dict with string keys and string values, default <code class="docutils literal notranslate"><span class="pre">{}</span></code>) By default, column names are used in the figure for axis titles, legend entries and hovers. This parameter allows this to be overridden. The keys of this dict should correspond to column names, and the values should correspond to the desired label to be displayed.</p></li>
+<li><p><strong>color_continuous_scale</strong> – (list of valid CSS-color strings) This list is used to build a continuous color scale when the column denoted by <code class="docutils literal notranslate"><span class="pre">color</span></code> contains numeric data. Various useful color scales are available in the <code class="docutils literal notranslate"><span class="pre">plotly_express.colors</span></code> submodules, specifically <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.sequential</span></code>, <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.diverging</span></code> and <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.cyclical</span></code>.</p></li>
+<li><p><strong>range_color</strong> – (2-element list of numbers) If provided, overrides auto-scaling on the continuous color scale.</p></li>
+<li><p><strong>color_continuous_midpoint</strong> – (number, defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>) If set, computes the bounds of the continuous color scale to have the desired midpoint. Setting this value is recommended when using <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.diverging</span></code> color scales as the inputs to <code class="docutils literal notranslate"><span class="pre">color_continuous_scale</span></code>.</p></li>
+<li><p><strong>marginal_x</strong> – (string, one of <code class="docutils literal notranslate"><span class="pre">'rug'</span></code>, <code class="docutils literal notranslate"><span class="pre">'box'</span></code>, <code class="docutils literal notranslate"><span class="pre">'violin'</span></code>, <code class="docutils literal notranslate"><span class="pre">'histogram'</span></code>) If set, a horizontal subplot is drawn above the main plot, visualizing the x-distribution.</p></li>
+<li><p><strong>marginal_y</strong> – (string, one of <code class="docutils literal notranslate"><span class="pre">'rug'</span></code>, <code class="docutils literal notranslate"><span class="pre">'box'</span></code>, <code class="docutils literal notranslate"><span class="pre">'violin'</span></code>, <code class="docutils literal notranslate"><span class="pre">'histogram'</span></code>) If set, a vertical subplot is drawn to the right of the main plot, visualizing the y-distribution.</p></li>
+<li><p><strong>opacity</strong> – (number, between 0 and 1) Sets the opacity for markers.</p></li>
+<li><p><strong>log_x</strong> – (boolean, default <code class="docutils literal notranslate"><span class="pre">False</span></code>) If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the x-axis is log-scaled in cartesian coordinates.</p></li>
+<li><p><strong>log_y</strong> – (boolean, default <code class="docutils literal notranslate"><span class="pre">False</span></code>) If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the y-axis is log-scaled in cartesian coordinates.</p></li>
+<li><p><strong>range_x</strong> – (2-element list of numbers) If provided, overrides auto-scaling on the x-axis in cartesian coordinates.</p></li>
+<li><p><strong>range_y</strong> – (2-element list of numbers) If provided, overrides auto-scaling on the y-axis in cartesian coordinates.</p></li>
+<li><p><strong>histfunc</strong> – (string, one of <code class="docutils literal notranslate"><span class="pre">'count'</span></code>, <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>, <code class="docutils literal notranslate"><span class="pre">'avg'</span></code>, <code class="docutils literal notranslate"><span class="pre">'min'</span></code>, <code class="docutils literal notranslate"><span class="pre">'max'</span></code>. Default is <code class="docutils literal notranslate"><span class="pre">'count'</span></code>)Function used to aggregate values for summarization (note: can be normalized with <code class="docutils literal notranslate"><span class="pre">histnorm</span></code>). The arguments to this function for <code class="docutils literal notranslate"><span class="pre">histogram</span></code> are the values of <code class="docutils literal notranslate"><span class="pre">y</span></code> if <code class="docutils literal notranslate"><span class="pre">orientation</span></code> is <code class="docutils literal notranslate"><span class="pre">'v'</span></code>, otherwise the arguements are the values of <code class="docutils literal notranslate"><span class="pre">x</span></code>. The arguments to this function for <code class="docutils literal notranslate"><span class="pre">density_heatmap</span></code> and <code class="docutils literal notranslate"><span class="pre">density_contour</span></code> are the values of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></li>
+<li><p><strong>histnorm</strong> – (string, one of <code class="docutils literal notranslate"><span class="pre">'percent'</span></code>, <code class="docutils literal notranslate"><span class="pre">'probability'</span></code>, <code class="docutils literal notranslate"><span class="pre">'density'</span></code>, <code class="docutils literal notranslate"><span class="pre">'probability</span> <span class="pre">density'</span></code>, default <code class="docutils literal notranslate"><span class="pre">None</span></code>) If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> is used as is. If <code class="docutils literal notranslate"><span class="pre">'probability'</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> for a given bin is divided by the sum of the output of <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> for all bins. If <code class="docutils literal notranslate"><span class="pre">'percent'</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> for a given bin is divided by the sum of the output of <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> for all bins and multiplied by 100. If <code class="docutils literal notranslate"><span class="pre">'density'</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> for a given bin is divided by the size of the bin. If <code class="docutils literal notranslate"><span class="pre">'probability</span> <span class="pre">density'</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> for a given bin is normalized such that it corresponds to the probability that a random event whose distribution is described by the output of <code class="docutils literal notranslate"><span class="pre">histfunc</span></code> will fall into that bin.</p></li>
+<li><p><strong>nbinsx</strong> – (positive integer) Sets the number of bins along the x axis.</p></li>
+<li><p><strong>nbinsy</strong> – (positive integer) Sets the number of bins along the y axis.</p></li>
+<li><p><strong>title</strong> – (string) The figure title.</p></li>
+<li><p><strong>template</strong> – (string or Plotly.py template object) The figure template name or definition.</p></li>
+<li><p><strong>width</strong> – (integer, default <code class="docutils literal notranslate"><span class="pre">None</span></code>) The figure width in pixels.</p></li>
+<li><p><strong>height</strong> – (integer, default <code class="docutils literal notranslate"><span class="pre">600</span></code>) The figure height in pixels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_3d.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_polar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_ternary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_mapbox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_mapbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_geo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_geo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_3d.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_polar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_ternary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_mapbox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_mapbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_geo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_geo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.area.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.bar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.bar_polar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.bar_polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.violin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.violin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.box.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.strip.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.histogram.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_matrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.parallel_coordinates.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.parallel_coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.parallel_categories.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.parallel_categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.choropleth.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.choropleth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.density_contour.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.density_contour</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.density_heatmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a><ul>
+      <li>Previous: <a href="plotly.express.density_contour.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.density_contour</a></li>
+      <li>Next: <a href="../graph_objects.html" title="next chapter">Graph objects: figures, traces and layout</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.express.density_heatmap.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

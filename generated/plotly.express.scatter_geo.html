@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.express.scatter_geo &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.express.line" href="plotly.express.line.html" />
+    <link rel="prev" title="plotly.express.scatter_mapbox" href="plotly.express.scatter_mapbox.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-express-scatter-geo">
+<h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_geo<a class="headerlink" href="#plotly-express-scatter-geo" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.express.scatter_geo">
+<code class="sig-prename descclassname">plotly.express.</code><code class="sig-name descname">scatter_geo</code><span class="sig-paren">(</span><em class="sig-param">data_frame=None</em>, <em class="sig-param">lat=None</em>, <em class="sig-param">lon=None</em>, <em class="sig-param">locations=None</em>, <em class="sig-param">locationmode=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">text=None</em>, <em class="sig-param">hover_name=None</em>, <em class="sig-param">hover_data=None</em>, <em class="sig-param">custom_data=None</em>, <em class="sig-param">size=None</em>, <em class="sig-param">animation_frame=None</em>, <em class="sig-param">animation_group=None</em>, <em class="sig-param">category_orders={}</em>, <em class="sig-param">labels={}</em>, <em class="sig-param">color_discrete_sequence=None</em>, <em class="sig-param">color_discrete_map={}</em>, <em class="sig-param">color_continuous_scale=None</em>, <em class="sig-param">range_color=None</em>, <em class="sig-param">color_continuous_midpoint=None</em>, <em class="sig-param">opacity=None</em>, <em class="sig-param">size_max=None</em>, <em class="sig-param">projection=None</em>, <em class="sig-param">scope=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">title=None</em>, <em class="sig-param">template=None</em>, <em class="sig-param">width=None</em>, <em class="sig-param">height=None</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.express.scatter_geo" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>In a geographic scatter plot, each row of <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> is represented by a symbol mark on a map.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_frame</strong> – A <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>, or a <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> array or a dictionary which are tranformed internally to <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. This argument needsto be passed for column names (and not keyword names) to be used.</p></li>
+<li><p><strong>lat</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to position marks according to latitude on a map.</p></li>
+<li><p><strong>lon</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to position marks according to longitude on a map.</p></li>
+<li><p><strong>locations</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are be interpreted according to <code class="docutils literal notranslate"><span class="pre">locationmode</span></code> and mapped to longitude/latitude.</p></li>
+<li><p><strong>locationmode</strong> – (string, one of ‘ISO-3’, ‘USA-states’, ‘country names’) Determines the set of locations used to match entries in <code class="docutils literal notranslate"><span class="pre">locations</span></code> to regions on the map.</p></li>
+<li><p><strong>color</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to assign color to marks.</p></li>
+<li><p><strong>text</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like appear in the figure as text labels.</p></li>
+<li><p><strong>hover_name</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like appear in bold in the hover tooltip.</p></li>
+<li><p><strong>hover_data</strong> – (list of string or int: names of columns in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like objects) Values from these columns appear as extra data in the hover tooltip.</p></li>
+<li><p><strong>custom_data</strong> – (list of string or int: names of columns in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like objects) Values from these columns are extra data, to be used in widgets or Dash callbacks for example. This data is not user-visible but is included in events emitted by the figure (lasso selection etc.)</p></li>
+<li><p><strong>size</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to assign mark sizes.</p></li>
+<li><p><strong>animation_frame</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to assign marks to animation frames.</p></li>
+<li><p><strong>animation_group</strong> – (string or int: name of column in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code>, or pandas Series, or array_like object) Values from this column or array_like are used to provide object-constancy across animation frames: rows with matching <a href="#id1"><span class="problematic" id="id2">`</span></a>animation_group`s will be treated as if they describe the same object in each frame.</p></li>
+<li><p><strong>category_orders</strong> – (dict with string keys and list-of-string values, default <code class="docutils literal notranslate"><span class="pre">{}</span></code>) By default, in Python 3.6+, the order of categorical values in axes, legends and facets depends on the order in which these values are first encountered in <code class="docutils literal notranslate"><span class="pre">data_frame</span></code> (and no order is guaranteed by default in Python below 3.6). This parameter is used to force a specific ordering of values per column. The keys of this dict should correspond to column names, and the values should be lists of strings corresponding to the specific display order desired.</p></li>
+<li><p><strong>labels</strong> – (dict with string keys and string values, default <code class="docutils literal notranslate"><span class="pre">{}</span></code>) By default, column names are used in the figure for axis titles, legend entries and hovers. This parameter allows this to be overridden. The keys of this dict should correspond to column names, and the values should correspond to the desired label to be displayed.</p></li>
+<li><p><strong>color_discrete_sequence</strong> – (list of valid CSS-color strings) When <code class="docutils literal notranslate"><span class="pre">color</span></code> is set and the values in the corresponding column are not numeric, values in that column are assigned colors by cycling through <code class="docutils literal notranslate"><span class="pre">color_discrete_sequence</span></code> in the order described in <code class="docutils literal notranslate"><span class="pre">category_orders</span></code>, unless the value of <code class="docutils literal notranslate"><span class="pre">color</span></code> is a key in <code class="docutils literal notranslate"><span class="pre">color_discrete_map</span></code>. Various useful color sequences are available in the <code class="docutils literal notranslate"><span class="pre">plotly_express.colors</span></code> submodules, specifically <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.qualitative</span></code>.</p></li>
+<li><p><strong>color_discrete_map</strong> – (dict with string keys and values that are valid CSS-color strings, default <code class="docutils literal notranslate"><span class="pre">{}</span></code>) Used to override <code class="docutils literal notranslate"><span class="pre">color_discrete_sequence</span></code> to assign a specific colors to marks corresponding with specific values. Keys in <code class="docutils literal notranslate"><span class="pre">color_discrete_map</span></code> should be values in the column denoted by <code class="docutils literal notranslate"><span class="pre">color</span></code>.</p></li>
+<li><p><strong>color_continuous_scale</strong> – (list of valid CSS-color strings) This list is used to build a continuous color scale when the column denoted by <code class="docutils literal notranslate"><span class="pre">color</span></code> contains numeric data. Various useful color scales are available in the <code class="docutils literal notranslate"><span class="pre">plotly_express.colors</span></code> submodules, specifically <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.sequential</span></code>, <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.diverging</span></code> and <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.cyclical</span></code>.</p></li>
+<li><p><strong>range_color</strong> – (2-element list of numbers) If provided, overrides auto-scaling on the continuous color scale.</p></li>
+<li><p><strong>color_continuous_midpoint</strong> – (number, defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>) If set, computes the bounds of the continuous color scale to have the desired midpoint. Setting this value is recommended when using <code class="docutils literal notranslate"><span class="pre">plotly_express.colors.diverging</span></code> color scales as the inputs to <code class="docutils literal notranslate"><span class="pre">color_continuous_scale</span></code>.</p></li>
+<li><p><strong>opacity</strong> – (number, between 0 and 1) Sets the opacity for markers.</p></li>
+<li><p><strong>size_max</strong> – (integer, default 20) Set the maximum mark size when using <code class="docutils literal notranslate"><span class="pre">size</span></code>.</p></li>
+<li><p><strong>projection</strong> – (string, one of <code class="docutils literal notranslate"><span class="pre">'equirectangular'</span></code>, <code class="docutils literal notranslate"><span class="pre">'mercator'</span></code>, <code class="docutils literal notranslate"><span class="pre">'orthographic'</span></code>, <code class="docutils literal notranslate"><span class="pre">'natural</span> <span class="pre">earth'</span></code>, <code class="docutils literal notranslate"><span class="pre">'kavrayskiy7'</span></code>, <code class="docutils literal notranslate"><span class="pre">'miller'</span></code>, <code class="docutils literal notranslate"><span class="pre">'robinson'</span></code>, <code class="docutils literal notranslate"><span class="pre">'eckert4'</span></code>, <code class="docutils literal notranslate"><span class="pre">'azimuthal</span> <span class="pre">equal</span> <span class="pre">area'</span></code>, <code class="docutils literal notranslate"><span class="pre">'azimuthal</span> <span class="pre">equidistant'</span></code>, <code class="docutils literal notranslate"><span class="pre">'conic</span> <span class="pre">equal</span> <span class="pre">area'</span></code>, <code class="docutils literal notranslate"><span class="pre">'conic</span> <span class="pre">conformal'</span></code>, <code class="docutils literal notranslate"><span class="pre">'conic</span> <span class="pre">equidistant'</span></code>, <code class="docutils literal notranslate"><span class="pre">'gnomonic'</span></code>, <code class="docutils literal notranslate"><span class="pre">'stereographic'</span></code>, <code class="docutils literal notranslate"><span class="pre">'mollweide'</span></code>, <code class="docutils literal notranslate"><span class="pre">'hammer'</span></code>, <code class="docutils literal notranslate"><span class="pre">'transverse</span> <span class="pre">mercator'</span></code>, <code class="docutils literal notranslate"><span class="pre">'albers</span> <span class="pre">usa'</span></code>, <code class="docutils literal notranslate"><span class="pre">'winkel</span> <span class="pre">tripel'</span></code>, <code class="docutils literal notranslate"><span class="pre">'aitoff'</span></code>, <code class="docutils literal notranslate"><span class="pre">'sinusoidal'</span></code>)Default depends on <code class="docutils literal notranslate"><span class="pre">scope</span></code>.</p></li>
+<li><p><strong>scope</strong> – (string, one of <code class="docutils literal notranslate"><span class="pre">'world'</span></code>, <code class="docutils literal notranslate"><span class="pre">'usa'</span></code>, <code class="docutils literal notranslate"><span class="pre">'europe'</span></code>, <code class="docutils literal notranslate"><span class="pre">'asia'</span></code>, <code class="docutils literal notranslate"><span class="pre">'africa'</span></code>, <code class="docutils literal notranslate"><span class="pre">'north</span> <span class="pre">america'</span></code>, <code class="docutils literal notranslate"><span class="pre">'south</span> <span class="pre">america'</span></code>)Default is <code class="docutils literal notranslate"><span class="pre">'world'</span></code> unless <code class="docutils literal notranslate"><span class="pre">projection</span></code> is set to <code class="docutils literal notranslate"><span class="pre">'albers</span> <span class="pre">usa'</span></code>, which forces <code class="docutils literal notranslate"><span class="pre">'usa'</span></code>.</p></li>
+<li><p><strong>center</strong> – (dict with <code class="docutils literal notranslate"><span class="pre">lat</span></code> and <code class="docutils literal notranslate"><span class="pre">lon</span></code> keys) Sets the center point of the map.</p></li>
+<li><p><strong>title</strong> – (string) The figure title.</p></li>
+<li><p><strong>template</strong> – (string or Plotly.py template object) The figure template name or definition.</p></li>
+<li><p><strong>width</strong> – (integer, default <code class="docutils literal notranslate"><span class="pre">None</span></code>) The figure width in pixels.</p></li>
+<li><p><strong>height</strong> – (integer, default <code class="docutils literal notranslate"><span class="pre">600</span></code>) The figure height in pixels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_3d.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_polar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_ternary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_mapbox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_mapbox</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_geo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_3d.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_polar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_ternary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_mapbox.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_mapbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.line_geo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line_geo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.area.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.bar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.bar_polar.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.bar_polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.violin.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.violin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.box.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.strip.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.strip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.histogram.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.scatter_matrix.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.parallel_coordinates.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.parallel_coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.parallel_categories.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.parallel_categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.choropleth.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.choropleth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.density_contour.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.density_contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.express.density_heatmap.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.density_heatmap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io.html">I/O</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a><ul>
+      <li>Previous: <a href="plotly.express.scatter_mapbox.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.scatter_mapbox</a></li>
+      <li>Next: <a href="plotly.express.line.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.express</span></code>.line</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.express.scatter_geo.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

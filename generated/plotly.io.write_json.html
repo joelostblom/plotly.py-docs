@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plotly.io.write_json &#8212; plotly 4.2 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plotly.io.templates" href="plotly.io.templates.html" />
+    <link rel="prev" title="plotly.io.read_json" href="plotly.io.read_json.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="plotly-io-write-json">
+<h1><a class="reference internal" href="../io.html#module-plotly.io" title="plotly.io"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code></a>.write_json<a class="headerlink" href="#plotly-io-write-json" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="plotly.io.write_json">
+<code class="sig-prename descclassname">plotly.io.</code><code class="sig-name descname">write_json</code><span class="sig-paren">(</span><em class="sig-param">fig</em>, <em class="sig-param">file</em>, <em class="sig-param">validate=True</em>, <em class="sig-param">pretty=False</em>, <em class="sig-param">remove_uids=True</em><span class="sig-paren">)</span><a class="headerlink" href="#plotly.io.write_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a figure to JSON and write it to a file or writeable
+object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fig</strong> – Figure object or dict representing a figure</p></li>
+<li><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><em>writeable</em>) – A string representing a local file path or a writeable object
+(e.g. an open file descriptor)</p></li>
+<li><p><strong>pretty</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>default False</em><em>)</em>) – True if JSON representation should be pretty-printed, False if
+representation should be as compact as possible.</p></li>
+<li><p><strong>remove_uids</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em> (</em><em>default True</em><em>)</em>) – True if trace UIDs should be omitted from the JSON representation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="clearer"></div></div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../px.html">Plotly express: <code class="docutils literal notranslate"><span class="pre">plotly.express</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graph_objects.html">Graph objects: figures, traces and layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subplots.html">Subplots: <code class="docutils literal notranslate"><span class="pre">plotly.subplots</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../figure_factory.html">Figure Factory</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../io.html">I/O</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.write_image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.from_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.from_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.read_json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.read_json</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.templates.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_templated.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_templated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.to_html.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.to_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.write_html.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.write_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.renderers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly.io.show.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.show</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../io.html">I/O</a><ul>
+      <li>Previous: <a href="plotly.io.read_json.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.read_json</a></li>
+      <li>Next: <a href="plotly.io.templates.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">plotly.io</span></code>.templates</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, plotly team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/plotly.io.write_json.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39373211-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>
